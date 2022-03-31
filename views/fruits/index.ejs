@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+</head>
+<body>
+    <h1>Fruits</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <%- fruits.map(fruit => `
+                <tr>
+                    <td>
+                        <a href="/fruits/${fruit._id}">
+                            ${fruit.name}
+                        </a>
+                    </td>
+                    <td>
+                        <a href="/fruits/${fruit._id}/edit">
+                           Edit
+                        </a>
+                    </td>
+                    <td>
+                        <form action="/fruits/${fruit._id}?_method=DELETE" method="POST">
+                            <button>Delete</button>
+                        </form>
+                    </td>
+                </tr>
+                `).join("");%>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Edit Fruits</h1>
+    
+    <!-- <form action="/fruits" method="POST">
+        <input type="text" name="name" placeholder="Name" />
+        <input type="text" name="color" placeholder="Color" />
+        <select name="color">
+            <option>Red</option>
+            <option>Yellow</option>
+            <option>Green</option>
+        </select>
+        <input type="checkbox" name="readyToEat" placeholder="Weight" />
+        <input type="submit" value="Create" />
+    </form> -->
+
+    <form action="/fruits/<%=fruit._id%>?_method=PUT" method="POST">
+      <fieldset>
+          <legend>Fruit Details</legend>
+          <label for="name">Name</label>
+          <input id="name" name="name" placeholder="Name" />
+          <br/>
+          <label for="colour">Colour</label>
+          <select name="colour" id="colour">
+            <option>Red</option>
+            <option>Yellow</option>
+            <option>Green</option>
+          </select>
+          <br />
+          <label for="readyToEat">Ready to Eat?</label>
+          <input
+            type="checkbox"
+            id="readyToEat"
+            name="readyToEat"
+          />
+        </fieldset>
+        <input type="submit" value="Create" />
+      </form>
+
+</body>
+</html>
